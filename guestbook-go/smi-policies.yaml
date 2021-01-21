@@ -1,16 +1,17 @@
 # TCP route to allow Guestbook app to interact with Redis service on port 6379
-apiVersion: specs.smi-spec.io/v1alpha3
+apiVersion: specs.smi-spec.io/v1alpha4
 kind: TCPRoute
 metadata:
   name: redis-route
   namespace: guestbook
-  labels:
-    ports: "6379"
-spec: {}
+spec:
+  matches:
+    ports:
+    - 6379
 ---
 # Traffic target to allow Guestbook app to interact with Redis service
 kind: TrafficTarget
-apiVersion: access.smi-spec.io/v1alpha2
+apiVersion: access.smi-spec.io/v1alpha3
 metadata:
   name: redis-target
   namespace: guestbook
