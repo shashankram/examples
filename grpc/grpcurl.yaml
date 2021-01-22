@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcurl
+spec:
+  selector:
+    matchLabels:
+      app: grpcurl
+  template:
+    metadata:
+      labels:
+        app: grpcurl
+    spec:
+      containers:
+      - image: networld/grpcurl
+        name: grpcurl
+        command: ["sleep"]
+        args: ["365d"]
