@@ -1,5 +1,5 @@
 ```bash
-osm install --osm-image-tag=b7337ab144d0126fa44312bc3001f563183ffb76
+osm install
 
 kubectl create ns guestbook
 osm namespace add guestbook
